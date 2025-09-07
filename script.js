@@ -702,6 +702,12 @@ function checkAnswer(selectedOption, correctAnswer) {
         gameState.currentQuestion++;
         nextBtn.style.display = 'none';
         gameState.gameActive = true;
+
+        // Vérifie si toutes les questions sont terminées
+        if (gameState.currentQuestion >= gameState.totalQuestions) {
+        endGame();
+        return;
+    }
         loadQuestion();
     }
     
